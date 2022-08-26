@@ -1,16 +1,12 @@
 package com.xc.jwt.client.service;
 
 import com.xc.core.exception.BusinessBaseExceptionCode;
-import com.xc.jwt.annotation.EnableAuthClient;
 import com.xc.jwt.client.entity.*;
 import com.xc.jwt.client.properties.*;
 import com.xc.jwt.utils.JwtHelper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @ClassName: JwtTokenClientUtils
@@ -39,7 +35,7 @@ public class JwtTokenService {
      * @throws BusinessBaseExceptionCode
      */
     public Token generateUserToken(JwtUserInfo jwtInfo, Integer expire)  throws BusinessBaseExceptionCode {
-        TokenInfo userTokenInfo = authProperties.getUser();
+        TokenInfo userTokenInfo = authProperties.getTokenInfo();
         if (expire == null || expire <= 0) {
             expire = userTokenInfo.getExpire();
         }
@@ -50,7 +46,7 @@ public class JwtTokenService {
      * 解析token
      */
     public JwtUserInfo getUserInfo(String token)  throws BusinessBaseExceptionCode {
-        TokenInfo userTokenInfo = authProperties.getUser();
+        TokenInfo userTokenInfo = authProperties.getTokenInfo();
         return JwtHelper.getJwtFromToken(token, userTokenInfo.getPubKey());
     }
 }

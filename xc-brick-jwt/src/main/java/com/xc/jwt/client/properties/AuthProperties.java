@@ -12,9 +12,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @Author: Chao Xu
  * @Date: 2022/8/21 17:35
  **/
-@ConfigurationProperties(prefix = "authentication")
+
 @Data
 @NoArgsConstructor
+@ConfigurationProperties(prefix = "jwt")
 public class AuthProperties {
-    private TokenInfo user;
+    private TokenInfo tokenInfo;
 }

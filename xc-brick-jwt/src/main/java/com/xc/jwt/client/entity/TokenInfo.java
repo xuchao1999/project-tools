@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 public class TokenInfo {
     /**
      * @Author Chao Xu
-     * @Description 请求头名称
+     * @Description accessToken
      * @Date 17:38 2022/8/21
      **/
-    private String headerName;
+    private String accessToken;
     /**
      * 过期时间
      */

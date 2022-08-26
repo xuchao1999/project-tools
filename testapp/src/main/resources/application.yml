@@ -1,0 +1,10 @@
+server:
+  port: 8712
+spring:
+  application:
+    name: xc-brick-test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: e68c6172-f7ab-4daf-9f69-1146f5c23499

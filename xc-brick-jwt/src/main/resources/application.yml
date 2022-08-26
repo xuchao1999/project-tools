@@ -1,7 +1,6 @@
-
-authentication:
-  user:
-    headerName: token
+jwt:
+  tokenInfo:
+    accessToken: token
     expire: 1000
     pubKey: pub.key
     priKey: pri.key

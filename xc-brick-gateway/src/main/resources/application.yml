@@ -1,0 +1,75 @@
+server:
+  port: 8094
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+spring:
+  application:
+    name: xc-brick-gateways
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: e68c6172-f7ab-4daf-9f69-1146f5c23499
+    gateway:
+      routes:
+        # test模块
+        - id: xc-brick-test
+          uri: lb://xc-brick-test
+          order: 0
+          predicates:
+            - Path=/tastapp/**
+          filters:
+            - StripPrefix=1
+      enabled: true
+      discovery:
+        locator:
+          enabled: true
+      httpclient:
+        connect-timeout: 60000
+        response-timeout: 60s
+        pool:
+          max-idle-time: PT10S
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allow-credentials: true  # 允许携带认证信息
+            allowed-origins: "*"  # 允许跨域的源(网站域名/ip)，设置*为全部
+            allowed-headers: "*"  # 允许跨域请求里的head字段，设置*为全部
+            allowed-methods: "*"  # 允许跨域的method， 默认为GET和OPTIONS，设置*为全部
+            max-age: 3600  # 跨域允许的有效期
+  main:
+    allow-bean-definition-overriding: true
+
+  #Redis
+  redis:
+    host: 127.0.0.1
+    port: 6679
+    #password: 123456
+    # 连接超时时间（记得添加单位，Duration）
+    timeout: 10000ms
+    # Redis默认情况下有16个分片，这里配置具体使用的分片
+    # database: 0
+    lettuce:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-wait: -1ms
+        # 连接池中的最大空闲连接 默认 8
+        max-idle: 8
+        # 连接池中的最小空闲连接 默认 0
+        min-idle: 0
+  cache:
+    # 一般来说是不用配置的，Spring Cache 会根据依赖的包自行装配
+    type: redis
+authentication:
+  whitelist:
+    - "/**/getToken"
+jwt:
+  tokenInfo:
+    accessToken: token
+    expire: 1000
+    pubKey: pub.key
