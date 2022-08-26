@@ -1,6 +1,7 @@
 package com.xc.user.interceptor;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.URLUtil;
 import com.xc.core.contstants.BaseContextConstants;
 import com.xc.core.contstants.BaseContextHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ContextHandlerInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
         try {
             if (!(handler instanceof HandlerMethod)) {
                 log.info("not exec!!! url={}", request.getRequestURL());
@@ -46,7 +48,7 @@ public class ContextHandlerInterceptor extends HandlerInterceptorAdapter {
     }
 
     private String getHeader(HttpServletRequest request, String name) {
-        String value = request.getHeader(name);
+        String value = URLUtil.decode(request.getHeader(name), "UTF-8");
         if (StrUtil.isEmpty(value)) {
             return null;
         }

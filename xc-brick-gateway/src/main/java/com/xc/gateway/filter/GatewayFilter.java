@@ -1,6 +1,7 @@
 package com.xc.gateway.filter;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.URLUtil;
 import com.alibaba.fastjson.JSON;
 import com.xc.core.contstants.BaseContextConstants;
 import com.xc.gateway.config.IgnoreTokenConfig;
@@ -89,7 +90,7 @@ public class GatewayFilter implements GlobalFilter, Ordered {
         if (StrUtil.isEmpty(value)) {
             return builder;
         }
-        return builder.header(name, value);
+        return builder.header(name, URLUtil.encode(value, "UTF-8"));
     }
 
     private Mono<Void> setUnauthorizedResponse(ServerWebExchange exchange, String msg) {
