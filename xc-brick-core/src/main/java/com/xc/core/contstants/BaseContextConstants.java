@@ -1,4 +1,4 @@
-package com.xc.jwt.client.contstants;
+package com.xc.core.contstants;
 
 /**
  * 常量工具类

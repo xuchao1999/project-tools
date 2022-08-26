@@ -13,7 +13,7 @@ import com.xc.core.utils.DateUtils;
 import com.xc.jwt.client.entity.Token;
 
 import com.xc.jwt.client.entity.JwtUserInfo;
-import com.xc.jwt.client.contstants.BaseContextConstants;
+import com.xc.core.contstants.BaseContextConstants;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 

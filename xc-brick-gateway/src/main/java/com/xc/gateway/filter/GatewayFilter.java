@@ -2,13 +2,12 @@ package com.xc.gateway.filter;
 
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
+import com.xc.core.contstants.BaseContextConstants;
 import com.xc.gateway.config.IgnoreTokenConfig;
-import com.xc.jwt.client.contstants.BaseContextConstants;
 import com.xc.jwt.client.entity.JwtUserInfo;
 import com.xc.jwt.client.properties.AuthProperties;
 import com.xc.jwt.client.service.JwtTokenService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.i18n.LocaleContext;
