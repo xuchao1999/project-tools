@@ -1,0 +1,5 @@
+brick:
+  swagger:
+#    是否开启swagger
+    enabled: true
+#    docket:

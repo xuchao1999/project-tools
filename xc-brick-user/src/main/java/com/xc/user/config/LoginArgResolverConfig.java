@@ -13,6 +13,10 @@ import java.util.List;
 
 /**
  * 公共配置类, 一些公共工具配置
+ *
+ * @author xc
+ * @date 20220829 08:56:07
+ * @since v1.0
  */
 public class LoginArgResolverConfig implements WebMvcConfigurer {
 

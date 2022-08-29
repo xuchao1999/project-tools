@@ -8,3 +8,11 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: e68c6172-f7ab-4daf-9f69-1146f5c23499
+brick:
+  swagger:
+    #    是否开启swagger
+    enabled: true
+    docket:
+      user:
+        title: 用户模块
+        base-package: com.xc.testapp.controller

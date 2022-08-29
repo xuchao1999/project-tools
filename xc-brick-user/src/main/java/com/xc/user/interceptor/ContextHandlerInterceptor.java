@@ -4,7 +4,6 @@ import cn.hutool.core.util.StrUtil;
 import com.xc.core.contstants.BaseContextConstants;
 import com.xc.core.contstants.BaseContextHandler;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -19,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  * 解析请求头数据， 将用户信息、应用信息封装到BaseContextHandler
  * 考虑请求来源是否网关（ip等）
  * <p>
+ *
+ * @author xc
+ * @date 20220829 08:56:17
+ * @since v1.0
  */
 @Slf4j
 public class ContextHandlerInterceptor extends HandlerInterceptorAdapter {
