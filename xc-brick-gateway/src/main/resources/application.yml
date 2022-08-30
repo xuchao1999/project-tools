@@ -12,7 +12,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: e68c6172-f7ab-4daf-9f69-1146f5c23499
+        namespace: aa2d0e06-5b70-4df3-a12d-0bce8910e2b8
     gateway:
       routes:
         # test模块
