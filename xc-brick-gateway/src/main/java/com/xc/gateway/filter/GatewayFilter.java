@@ -85,7 +85,13 @@ public class GatewayFilter implements GlobalFilter, Ordered {
         return chain.filter(exchange.mutate().request(build).build());
     }
 
-    //将指定信息放入header中
+    /**
+     * 将指定信息放入header中
+     * @param builder
+     * @param name
+     * @param value
+     * @return
+     */
     private ServerHttpRequest.Builder addHeader(ServerHttpRequest.Builder builder, String name, String value) {
         if (StrUtil.isEmpty(value)) {
             return builder;

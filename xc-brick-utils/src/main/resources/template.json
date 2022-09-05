@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "name": "controller",
+    "description": "controller"
+  },
+  {
+    "id": "2",
+    "name": "service",
+    "description": "service"
+  },
+  {
+    "id": "3",
+    "name": "service_impl",
+    "description": "service_impl"
+  },
+  {
+    "id": "4",
+    "name": "data",
+    "group": "mybatis",
+    "description": "data"
+  },
+  {
+    "id": "5",
+    "name": "mapper",
+    "description": "mapper"
+  },
+  {
+    "id": "6",
+    "name": "mybatis",
+    "description": "mybatis"
+  },
+  {
+    "id": "7",
+    "name": "po",
+    "description": "po"
+  },
+  {
+    "id": "8",
+    "name": "vo",
+    "description": "vo"
+  },
+  {
+    "id": "9",
+    "name": "save_model",
+    "description": "save_model"
+  },
+  {
+    "id": "10",
+    "name": "query_model",
+    "description": "query_model"
+  }
+  /*{
+    "id": "11",
+    "name": "dto",
+    "description": "dto"
+  }*/
+]

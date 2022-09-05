@@ -1,40 +1,8 @@
+server:
+  port: 8999
 spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: e68c6172-f7ab-4daf-9f69-1146f5c23499
   datasource:
-    #url: jdbc:mysql://127.0.0.1:3306/jxcc_labour_union?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    url: jdbc:mysql://localhost:3306/auth?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/auth?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
-    #password: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
-  #    sentinel:
-#      transport:
-#        dashboard: 42.192.69.29:8080
-#        clientIp: 42.192.69.29
-  application:
-    name: auth-service
-server:
-  port: 8809
-
-
-brick:
-  swagger:
-    #    是否开启swagger
-    enabled: true
-    docket:
-      user:
-        title: 用户模块
-        base-package: com.xc.auth.interfaces.controller
-
-jwt:
-  tokenInfo:
-    accessToken: token
-    expire: 1000
-    pubKey: pub.key
-    priKey: pri.key
