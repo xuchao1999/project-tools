@@ -1,9 +1,9 @@
 package com.xc.auth.controller;
 
-import com.xc.auth.entity.dto.req.AuthMenuQueryDTO;
-import com.xc.auth.entity.dto.req.AuthMenuSaveDTO;
-import com.xc.auth.entity.vo.AuthMenuVO;
-import com.xc.auth.service.IAuthMenuService;
+import com.xc.auth.entity.dto.req.CommonLoginLogQueryDTO;
+import com.xc.auth.entity.dto.req.CommonLoginLogSaveDTO;
+import com.xc.auth.entity.vo.CommonLoginLogVO;
+import com.xc.auth.service.ICommonLoginLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -13,60 +13,60 @@ import com.xc.core.base.R;
 import java.util.List;
 
 /**
- * 菜单表
+ * 字典名
  *
  * @author xc
  * @date 2022-09-06 17:08:54
  */
-@Api(tags = "菜单表")
+@Api(tags = "字典名")
 @RequiredArgsConstructor
-@RequestMapping(value = "/authmenu")
+@RequestMapping(value = "/commonloginlog")
 @RestController
-public class AuthMenuController {
+public class CommonLoginLogController {
 
 
-    private final IAuthMenuService authMenuService;
+    private final ICommonLoginLogService commonLoginLogService;
 
     @ApiOperation(value = "保存")
     @PostMapping
-    public R save(@Validated @RequestBody AuthMenuSaveDTO saveDTO) {
-        authMenuService.save(saveDTO);
+    public R save(@Validated @RequestBody CommonLoginLogSaveDTO saveDTO) {
+        commonLoginLogService.save(saveDTO);
         return R.success();
     }
 
     @ApiOperation("修改")
     @PutMapping
-    public R updateById(@Validated @RequestBody AuthMenuSaveDTO saveDTO) {
-        authMenuService.updateById(saveDTO);
+    public R updateById(@Validated @RequestBody CommonLoginLogSaveDTO saveDTO) {
+        commonLoginLogService.updateById(saveDTO);
         return R.success();
     }
 
     @ApiOperation("分页列表")
     @GetMapping
-    public R<Page<AuthMenuVO>> pageQuery(AuthMenuQueryDTO queryDTO) {
-        Page<AuthMenuVO> list = authMenuService.pageQuery(queryDTO);
+    public R<Page<CommonLoginLogVO>> pageQuery(CommonLoginLogQueryDTO queryDTO) {
+        Page<CommonLoginLogVO> list = commonLoginLogService.pageQuery(queryDTO);
         return R.success(list);
     }
 
 
     @ApiOperation("根据ID查询记录")
     @GetMapping(value = "/{id}")
-    public R<AuthMenuVO> getOneById(@PathVariable Long id) {
-        AuthMenuVO result = authMenuService.getOneById(id);
+    public R<CommonLoginLogVO> getOneById(@PathVariable Long id) {
+        CommonLoginLogVO result = commonLoginLogService.getOneById(id);
         return R.success(result);
     }
 
     @ApiOperation("删除")
     @DeleteMapping(value = "/{id}")
     public R delFlagById(@PathVariable Long id) {
-        authMenuService.delFlagById(id);
+        commonLoginLogService.delFlagById(id);
         return R.success();
     }
 
     @ApiOperation("批量删除")
     @DeleteMapping
     public R delFlagBatch(@RequestBody List<Long> idList) {
-        authMenuService.delFlagBatch(idList);
+        commonLoginLogService.delFlagBatch(idList);
         return R.success();
     }
 }

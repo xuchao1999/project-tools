@@ -56,7 +56,8 @@ public class CodeGeneratorRun {
 
     public static void main(String[] args) {
 
-        List<String> tables = Arrays.asList("auth_menu");
+        List<String> tables = Arrays.asList("common_login_log", "common_opt_log", "auth_menu", "auth_resource", "auth_role", "auth_user",
+                "core_station", "core_org", "auth_user_role", "auth_role_org", "auth_role_authority");
         for(String tableName : tables){
             run(tableName);
         }

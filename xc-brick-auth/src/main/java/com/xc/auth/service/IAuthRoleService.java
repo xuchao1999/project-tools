@@ -1,18 +1,18 @@
 package com.xc.auth.service;
 
-import com.xc.auth.entity.dto.req.AuthMenuQueryDTO;
-import com.xc.auth.entity.dto.req.AuthMenuSaveDTO;
-import com.xc.auth.entity.vo.AuthMenuVO;
+import com.xc.auth.entity.dto.req.AuthRoleQueryDTO;
+import com.xc.auth.entity.dto.req.AuthRoleSaveDTO;
+import com.xc.auth.entity.vo.AuthRoleVO;
 import com.baomidou.mybatisplus.plugins.Page;
 import java.util.List;
 
 /**
- * 菜单表
+ * 角色表
  *
  * @author xc
  * @date 2022-09-06 17:08:54
  */
-public interface IAuthMenuService {
+public interface IAuthRoleService {
 
     /**
      * 保存（添加或修改）
@@ -21,7 +21,7 @@ public interface IAuthMenuService {
      * @return
      * @author xc
      */
-    void save(AuthMenuSaveDTO saveDTO);
+    void save(AuthRoleSaveDTO saveDTO);
 
     /**
      * 修改
@@ -30,7 +30,7 @@ public interface IAuthMenuService {
      * @return
      * @author xc
      */
-    void updateById(AuthMenuSaveDTO saveDTO);
+    void updateById(AuthRoleSaveDTO saveDTO);
 
     /**
      * 根据ID逻辑删除记录
@@ -57,7 +57,7 @@ public interface IAuthMenuService {
      * @return
      * @author xc
      */
-    Page<AuthMenuVO> pageQuery(AuthMenuQueryDTO queryDTO);
+    Page<AuthRoleVO> pageQuery(AuthRoleQueryDTO queryDTO);
 
     /**
     * 根据ID查询记录
@@ -66,5 +66,5 @@ public interface IAuthMenuService {
     * @return
     * @author xc
     */
-    AuthMenuVO getOneById(Long id);
+    AuthRoleVO getOneById(Long id);
 }

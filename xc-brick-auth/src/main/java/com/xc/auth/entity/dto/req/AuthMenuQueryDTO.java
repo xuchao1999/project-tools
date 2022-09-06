@@ -13,15 +13,16 @@ import java.util.Date;
 * 菜单表
 *
 * @author xc
-* @date 2022-09-01 11:13:24
+* @date 2022-09-06 17:08:54
 */
 @ApiModel(value = "authMenu", description = "菜单表")
 @SuperBuilder
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class AuthMenuQueryDTO extends BasePage implements Serializable {
 
-    private static final long serialVersionUID = 184658471993612656L;
+    private static final long serialVersionUID = 376274846534896664L;
     @ApiModelProperty(value = "主键")
     private Long id;
     @ApiModelProperty(value = "菜单名称")

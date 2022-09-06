@@ -13,7 +13,7 @@ import java.util.Date;
  * 菜单表
  *
  * @author xc
- * @date 2022-09-01 11:13:24
+ * @date 2022-09-06 17:08:54
  */
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -22,7 +22,7 @@ import java.util.Date;
 @TableName("auth_menu")
 public class AuthMenuPO extends BasePO implements Serializable {
 
-    private static final long serialVersionUID = 184658471993612656L;
+    private static final long serialVersionUID = 376274846534896664L;
     /**
      * 菜单名称
      */

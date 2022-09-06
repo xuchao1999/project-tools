@@ -1,8 +1,8 @@
 package com.xc.auth.mapper;
 
-import com.xc.auth.entity.dto.req.AuthMenuQueryDTO;
-import com.xc.auth.entity.po.AuthMenuPO;
-import com.xc.auth.entity.vo.AuthMenuVO;
+import com.xc.auth.entity.dto.req.CoreStationQueryDTO;
+import com.xc.auth.entity.po.CoreStationPO;
+import com.xc.auth.entity.vo.CoreStationVO;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
@@ -10,13 +10,13 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.plugins.Page;
 
 /**
- * 菜单表
+ * 岗位表
  *
  * @author xc
  * @date 2022-09-06 17:08:54
  */
 @Mapper
-public interface IAuthMenuMapper extends BaseMapper<AuthMenuPO> {
+public interface ICoreStationMapper extends BaseMapper<CoreStationPO> {
 
     /**
      * 分页查询
@@ -24,7 +24,7 @@ public interface IAuthMenuMapper extends BaseMapper<AuthMenuPO> {
      * @author xc
      * @date 2022/09/06
      **/
-    Page<AuthMenuVO> pageQuery(Page page, AuthMenuQueryDTO queryDTO);
+    Page<CoreStationVO> pageQuery(Page page, CoreStationQueryDTO queryDTO);
 
     /**
      * 逻辑删除
